@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuni Travel & Tour - Your Trusted Umrah Journey Partner</title>
+    
+    <!-- CDN Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --light-green: #4a7c59;
+            --gold: #d4af37;
+            --light-gold: #f4e99b;
+            --dark-gold: #b8941f;
+            --cream: #f8f6f0;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+
+        .islamic-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2px, rgba(212, 175, 55, 0.1) 2px, rgba(212, 175, 55, 0.1) 4px, transparent 4px),
+                radial-gradient(circle at 75% 75%, transparent 2px, rgba(45, 80, 22, 0.05) 2px, rgba(45, 80, 22, 0.05) 4px, transparent 4px);
+            background-size: 20px 20px;
+        }
+
+        .geometric-border {
+            border-image: linear-gradient(45deg, var(--gold), var(--primary-green), var(--gold)) 1;
+        }
+
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background: rgba(45, 80, 22, 0.95);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .package-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f6f0 0%, #ffffff 100%);
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form select {
+            border: 2px solid #e5e5e5;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--primary-green) 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--dark-gold) 0%, var(--gold) 100%);
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.8) 0%, rgba(74, 124, 89, 0.8) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="islamic" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50 0L100 50L50 100L0 50Z" fill="rgba(212,175,55,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23islamic)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--primary-green) 50%, var(--gold) 80%, transparent 100%);
+            margin: 3rem 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8e6e0 100%);
+            min-height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-white text-2xl font-bold arabic-font">
+                    <i class="fas fa-mosque text-yellow-400 mr-2"></i>
+                    Ayuni Travel & Tour
+                </div>
+                
+                <div class="hidden lg:flex space-x-6">
+                    <a href="#home" class="text-white hover:text-yellow-400 transition-colors">Home</a>
+                    <a href="#about" class="text-white hover:text-yellow-400 transition-colors">About</a>
+                    <a href="#guide" class="text-white hover:text-yellow-400 transition-colors">Umrah Guide</a>
+                    <a href="#packages" class="text-white hover:text-yellow-400 transition-colors">Packages</a>
+                    <a href="#gallery" class="text-white hover:text-yellow-400 transition-colors">Gallery</a>
+                    <a href="#testimonials" class="text-white hover:text-yellow-400 transition-colors">Reviews</a>
+                    <a href="#faq" class="text-white hover:text-yellow-400 transition-colors">FAQ</a>
+                    <a href="#contact" class="text-white hover:text-yellow-400 transition-colors">Contact</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden bg-green-900 bg-opacity-95">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="#home" class="block text-white hover:text-yellow-400 transition-colors py-2">Home</a>
+                <a href="#about" class="block text-white hover:text-yellow-400 transition-colors py-2">About</a>
+                <a href="#guide" class="block text-white hover:text-yellow-400 transition-colors py-2">Umrah Guide</a>
+                <a href="#packages" class="block text-white hover:text-yellow-400 transition-colors py-2">Packages</a>
+                <a href="#gallery" class="block text-white hover:text-yellow-400 transition-colors py-2">Gallery</a>
+                <a href="#testimonials" class="block text-white hover:text-yellow-400 transition-colors py-2">Reviews</a>
+                <a href="#faq" class="block text-white hover:text-yellow-400 transition-colors py-2">FAQ</a>
+                <a href="#contact" class="block text-white hover:text-yellow-400 transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 arabic-font">
+                    أهلاً وسهلاً<br>
+                    <span class="text-yellow-400">Welcome to Your Sacred Journey</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Experience the spiritual journey of a lifetime with Ayuni Travel & Tour. 
+                    We provide comprehensive Umrah packages designed to make your pilgrimage meaningful and comfortable.
+                </p>
+                <div class="space-x-4">
+                    <button class="btn-primary text-white px-8 py-4 rounded-full text-lg hover:shadow-lg">
+                        <i class="fas fa-plane-departure mr-2"></i>
+                        Start Your Journey
+                    </button>
+                    <button class="btn-gold text-white px-8 py-4 rounded-full text-lg hover:shadow-lg">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 islamic-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-star-and-crescent text-yellow-500 mr-3"></i>
+                    About Ayuni Travel & Tour
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your trusted partner for the sacred journey of Umrah, providing exceptional service and spiritual guidance.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--primary-green);">Our Mission</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        At Ayuni Travel & Tour, we are dedicated to facilitating your spiritual journey to the holy cities of Makkah and Madinah. 
+                        With over 15 years of experience, we understand the sacred nature of Umrah and strive to provide services that honor this blessed pilgrimage.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2" style="color: var(--gold);">15+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2" style="color: var(--gold);">10,000+</div>
+                            <div class="text-gray-600">Pilgrims Served</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2" style="color: var(--gold);">24/7</div>
+                            <div class="text-gray-600">Support</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2" style="color: var(--gold);">99%</div>
+                            <div class="text-gray-600">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h4 class="text-2xl font-bold mb-6" style="color: var(--primary-green);">Why Choose Us?</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <div>
+                                    <strong>Expert Guidance:</strong> Experienced Islamic scholars and guides accompany every group
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <div>
+                                    <strong>Premium Accommodations:</strong> Carefully selected hotels near Haram for maximum convenience
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <div>
+                                    <strong>Comprehensive Packages:</strong> All-inclusive packages covering visa, flights, hotels, and meals
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <div>
+                                    <strong>24/7 Support:</strong> Round-the-clock assistance throughout your journey
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Umrah Guide Section -->
+    <section id="guide" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-book-open text-yellow-500 mr-3"></i>
+                    Complete Umrah Guide
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive step-by-step guide to help you prepare for and perform your Umrah pilgrimage.
+                </p>
+            </div>
+
+            <!-- Pre-Journey Preparation -->
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8 text-center" style="color: var(--primary-green);">Pre-Journey Preparation</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-passport text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h4 class="text-xl font-bold mb-3">1. Visa Requirements</h4>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Valid passport (minimum 6 months validity)</li>
+                            <li>• Umrah visa application</li>
+                            <li>• Recent passport-sized photographs</li>
+                            <li>• Vaccination certificates (Meningitis, COVID-19)</li>
+                            <li>• Mahram requirement for women</li>
+                            <li>• Processing time: 7-14 days</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-heart text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h4 class="text-xl font-bold mb-3">2. Spiritual Preparation</h4>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Learn Umrah rituals and prayers</li>
+                            <li>• Seek forgiveness and make dua</li>
+                            <li>• Study Islamic etiquette</li>
+                            <li>• Repent from all sins</li>
+                            <li>• Memorize essential Arabic phrases</li>
+                            <li>• Read about Prophet's Sunnah</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 shadow-lg">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-suitcase text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h4 class="text-xl font-bold mb-3">3. Packing Essentials</h4>
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Ihram clothing (white seamless)</li>
+                            <li>• Comfortable walking shoes</li>
+                            <li>• Personal toiletries (unscented)</li>
+                            <li>• Medications and first aid</li>
+                            <li>• Tasbih, Quran, prayer mat</li>
+                            <li>• Modest clothing for regular wear</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Umrah Rituals -->
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8 text-center" style="color: var(--primary-green);">Step-by-Step Umrah Rituals</h3>
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
+                                <span class="text-2xl font-bold" style="color: var(--primary-green);">1</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Ihram</h4>
+                        </div>
+                        <div class="md:w-2/3">
+                            <div class="bg-white rounded-lg p-6 shadow-lg">
+                                <h5 class="font-bold mb-3">Entering the State of Ihram</h5>
+                                <p class="text-gray-700 mb-3">
+                                    Before crossing the Miqat (designated boundary), perform ghusl, wear ihram clothing, and make the intention (niyyah) for Umrah.
+                                </p>
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <strong>Talbiyah:</strong> "Labbaik Allahumma Umratan" 
+                                    <br><em>"Here I am, O Allah, for Umrah"</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
+                                <span class="text-2xl font-bold" style="color: var(--primary-green);">2</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Tawaf</h4>
+                        </div>
+                        <div class="md:w-2/3">
+                            <div class="bg-white rounded-lg p-6 shadow-lg">
+                                <h5 class="font-bold mb-3">Circling the Kaaba</h5>
+                                <p class="text-gray-700 mb-3">
+                                    Perform 7 circuits around the Kaaba, starting from the Black Stone. Men should uncover their right shoulder (Idtiba).
+                                </p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Start each circuit by pointing to Black Stone</li>
+                                    <li>• Recite prayers and dhikr during tawaf</li>
+                                    <li>• Walk normally, don't push in crowds</li>
+                                    <li>• Complete 7 full circuits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
+                                <span class="text-2xl font-bold" style="color: var(--primary-green);">3</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Sa'i</h4>
+                        </div>
+                        <div class="md:w-2/3">
+                            <div class="bg-white rounded-lg p-6 shadow-lg">
+                                <h5 class="font-bold mb-3">Walking Between Safa and Marwah</h5>
+                                <p class="text-gray-700 mb-3">
+                                    Walk between the hills of Safa and Marwah 7 times, following the path of Hajar (AS) in search of water for Ismail (AS).
+                                </p>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Start at Safa, end at Marwah</li>
+                                    <li>• Men should jog between green markers</li>
+                                    <li>• Make dua during Sa'i</li>
+                                    <li>• 7 lengths total (not 7 round trips)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
+                                <span class="text-2xl font-bold" style="color: var(--primary-green);">4</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Halq/Taqsir</h4>
+                        </div>
+                        <div class="md:w-2/3">
+                            <div class="bg-white rounded-lg p-6 shadow-lg">
+                                <h5 class="font-bold mb-3">Cutting the Hair</h5>
+                                <p class="text-gray-700 mb-3">
+                                    Complete the Umrah by cutting your hair. Men can choose between shaving (halq) or trimming (taqsir), women should only trim.
+                                </p>
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <strong>Completion:</strong> After this step, you exit ihram and your Umrah is complete. You may now change clothes and resume normal activities.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Do's and Don'ts -->
+            <div class="fade-in">
+                <h3 class="text-3xl font-bold mb-8 text-center" style="color: var(--primary-green);">Essential Do's and Don'ts</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-green-50 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold mb-6 text-green-800">
+                            <i class="fas fa-check-circle mr-2"></i>DO's
+                        </h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Maintain state of purity (wudu) as much as possible
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Be patient and courteous with fellow pilgrims
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Keep hydrated and take care of your health
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Follow your group leader's instructions
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Make plenty of dua and dhikr
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                Dress modestly and appropriately
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold mb-6 text-red-800">
+                            <i class="fas fa-times-circle mr-2"></i>DON'Ts
+                        </h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't argue or fight with anyone
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't use scented products while in ihram
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't cut nails or hair while in ihram
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't engage in intimate relations (for married couples)
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't hunt or harm animals
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                Don't cover your head (men) or face/hands (women)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 islamic-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-gift text-yellow-500 mr-3"></i>
+                    Umrah Packages
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our carefully designed packages to suit your budget and preferences.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Economy Package -->
+                <div class="package-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in">
+                    <div class="bg-gray-100 p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--primary-green);">Economy Package</h3>
+                        <div class="text-4xl font-bold mb-2" style="color: var(--gold);">$1,299</div>
+                        <div class="text-gray-600">per person</div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-plane text-green-500 mr-3"></i>
+                                Round-trip flights
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bed text-green-500 mr-3"></i>
+                                3-star hotel (quad sharing)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marked-alt text-green-500 mr-3"></i>
+                                500m-1km from Haram
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-utensils text-green-500 mr-3"></i>
+                                Breakfast included
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bus text-green-500 mr-3"></i>
+                                Group transportation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-user-tie text-green-500 mr-3"></i>
+                                Basic guidance
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-calendar text-green-500 mr-3"></i>
+                                7 days duration
+                            </li>
+                        </ul>
+                        <button class="btn-primary w-full text-white py-3 rounded-lg font-semibold">
+                            Choose Economy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="package-card bg-white rounded-2xl shadow-xl overflow-hidden border-4 relative fade-in" style="border-color: var(--gold);">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-white px-4 py-2 text-sm font-bold rounded-bl-lg">
+                        POPULAR
+                    </div>
+                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 p-6 text-center text-white">
+                        <h3 class="text-2xl font-bold mb-2">Standard Package</h3>
+                        <div class="text-4xl font-bold mb-2">$1,899</div>
+                        <div class="text-yellow-100">per person</div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-plane text-green-500 mr-3"></i>
+                                Premium airline flights
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bed text-green-500 mr-3"></i>
+                                4-star hotel (double sharing)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marked-alt text-green-500 mr-3"></i>
+                                200-500m from Haram
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-utensils text-green-500 mr-3"></i>
+                                Half board (B/D)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-car text-green-500 mr-3"></i>
+                                Private transportation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-user-graduate text-green-500 mr-3"></i>
+                                Expert Islamic guide
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-calendar text-green-500 mr-3"></i>
+                                10 days duration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-city text-green-500 mr-3"></i>
+                                Madinah visit included
+                            </li>
+                        </ul>
+                        <button class="btn-gold w-full text-white py-3 rounded-lg font-semibold">
+                            Choose Standard
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VIP Package -->
+                <div class="package-card bg-white rounded-2xl shadow-xl overflow-hidden fade-in">
+                    <div class="bg-gradient-to-r from-green-600 to-green-700 p-6 text-center text-white">
+                        <h3 class="text-2xl font-bold mb-2">VIP Package</h3>
+                        <div class="text-4xl font-bold mb-2">$3,499</div>
+                        <div class="text-green-100">per person</div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-plane text-green-500 mr-3"></i>
+                                Business class flights
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bed text-green-500 mr-3"></i>
+                                5-star hotel (single room)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marked-alt text-green-500 mr-3"></i>
+                                50-200m from Haram
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-utensils text-green-500 mr-3"></i>
+                                Full board meals
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-car-side text-green-500 mr-3"></i>
+                                Luxury transportation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-user-crown text-green-500 mr-3"></i>
+                                Personal Islamic scholar
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-calendar text-green-500 mr-3"></i>
+                                14 days duration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-concierge-bell text-green-500 mr-3"></i>
+                                24/7 concierge service
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-spa text-green-500 mr-3"></i>
+                                Spa access included
+                            </li>
+                        </ul>
+                        <button class="btn-primary w-full text-white py-3 rounded-lg font-semibold">
+                            Choose VIP
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel and Transport Details -->
+            <div class="mt-20 fade-in">
+                <h3 class="text-3xl font-bold mb-12 text-center" style="color: var(--primary-green);">
+                    Accommodation & Transportation Details
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Hotel Details -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h4 class="text-2xl font-bold mb-6 text-center" style="color: var(--primary-green);">
+                            <i class="fas fa-hotel mr-2" style="color: var(--gold);"></i>
+                            Premium Hotels
+                        </h4>
+                        
+                        <div class="space-y-6">
+                            <div class="border-l-4 pl-4" style="border-color: var(--gold);">
+                                <h5 class="font-bold text-lg mb-2">Makkah Hotels</h5>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• Hilton Makkah Convention Hotel</li>
+                                    <li>• Swissotel Makkah</li>
+                                    <li>• Pullman ZamZam Makkah</li>
+                                    <li>• Conrad Makkah (VIP Package)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border-l-4 pl-4" style="border-color: var(--gold);">
+                                <h5 class="font-bold text-lg mb-2">Madinah Hotels</h5>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• Hilton Madinah Hotel</li>
+                                    <li>• Crowne Plaza Madinah</li>
+                                    <li>• Shaza Madinah</li>
+                                    <li>• Ritz Carlton Madinah (VIP Package)</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h6 class="font-bold mb-2">Hotel Amenities:</h6>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <div>• WiFi Internet</div>
+                                    <div>• 24/7 Room Service</div>
+                                    <div>• Prayer Facilities</div>
+                                    <div>• Halal Restaurants</div>
+                                    <div>• Air Conditioning</div>
+                                    <div>• Shuttle Service</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transportation Details -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h4 class="text-2xl font-bold mb-6 text-center" style="color: var(--primary-green);">
+                            <i class="fas fa-bus mr-2" style="color: var(--gold);"></i>
+                            Transportation
+                        </h4>
+                        
+                        <div class="space-y-6">
+                            <div class="border-l-4 pl-4" style="border-color: var(--gold);">
+                                <h5 class="font-bold text-lg mb-2">Airport Transfers</h5>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• Private air-conditioned vehicles</li>
+                                    <li>• Professional drivers</li>
+                                    <li>• Meet & greet service</li>
+                                    <li>• Luggage handling assistance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border-l-4 pl-4" style="border-color: var(--gold);">
+                                <h5 class="font-bold text-lg mb-2">Inter-city Travel</h5>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• Makkah to Madinah via luxury bus</li>
+                                    <li>• VIP packages include flight option</li>
+                                    <li>• Rest stops at designated areas</li>
+                                    <li>• Refreshments provided</li>
+                                </ul>
+                            </div>
+
+                            <div class="border-l-4 pl-4" style="border-color: var(--gold);">
+                                <h5 class="font-bold text-lg mb-2">Local Transportation</h5>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• Hotel to Haram shuttle service</li>
+                                    <li>• Shopping and dining trips</li>
+                                    <li>• Historical site visits</li>
+                                    <li>• 24/7 emergency transport</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h6 class="font-bold mb-2">Vehicle Features:</h6>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <div>• Air Conditioning</div>
+                                    <div>• WiFi Available</div>
+                                    <div>• Prayer Time Alerts</div>
+                                    <div>• Bottled Water</div>
+                                    <div>• USB Charging</div>
+                                    <div>• First Aid Kit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-images text-yellow-500 mr-3"></i>
+                    Gallery
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the beauty and spirituality of the Holy Cities through our gallery.
+                </p>
+            </div>
+
+            <div class="gallery-grid fade-in">
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-kaaba text-6xl mb-4"></i>
+                        <div>Holy Kaaba in Makkah</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-mosque text-6xl mb-4"></i>
+                        <div>Prophet's Mosque in Madinah</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-mountain text-6xl mb-4"></i>
+                        <div>Mount Uhud</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-hotel text-6xl mb-4"></i>
+                        <div>Luxury Hotel Accommodations</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-users text-6xl mb-4"></i>
+                        <div>Group Activities & Guidance</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="text-center">
+                        <i class="fas fa-plane text-6xl mb-4"></i>
+                        <div>Comfortable Travel Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 islamic-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-star text-yellow-500 mr-3"></i>
+                    What Our Pilgrims Say
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Read the experiences of thousands of satisfied pilgrims who chose Ayuni Travel & Tour.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Alhamdulillah, my Umrah experience with Ayuni Travel was absolutely perfect. The guides were knowledgeable, the accommodations were excellent, and the entire journey was spiritually fulfilling. I highly recommend them to anyone planning their pilgrimage."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user" style="color: var(--primary-green);"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold">Ahmad Hassan</div>
+                            <div class="text-gray-600">London, UK</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "As a first-time pilgrim, I was nervous about performing Umrah correctly. The team at Ayuni Travel provided excellent guidance throughout the journey. Their attention to detail and care for pilgrims is remarkable. May Allah reward them for their service."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user" style="color: var(--primary-green);"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold">Fatima Al-Zahra</div>
+                            <div class="text-gray-600">Toronto, Canada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "I've been on Umrah multiple times with different agencies, but Ayuni Travel stands out for their professionalism and genuine care. The VIP package was worth every penny - the proximity to Haram and the luxury amenities made the journey comfortable and peaceful."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user" style="color: var(--primary-green);"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold">Omar Abdullah</div>
+                            <div class="text-gray-600">Sydney, Australia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "The family package was perfect for our group of 8. Ayuni Travel handled everything seamlessly - from visa processing to accommodation arrangements. The children enjoyed the trip, and we adults could focus on our worship without any logistical worries."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-users" style="color: var(--primary-green);"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold">The Rahman Family</div>
+                            <div class="text-gray-600">Birmingham, UK</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Exceptional service from start to finish. The 24/7 support was invaluable, especially when my elderly mother needed medical assistance. The team went above and beyond to ensure her comfort and safety. Truly a blessed experience with Ayuni Travel."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user" style="color: var(--primary-green);"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold">Aisha Mohammed</div>
+                            <div class="text-gray-600">Manchester, UK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-question-circle text-yellow-500 mr-3"></i>
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Find answers to common questions about Umrah pilgrimage and our services.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6 fade-in">
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">What documents do I need for Umrah?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>You will need:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• Valid passport (minimum 6 months validity)</li>
+                            <li>• Umrah visa (we will assist with the application)</li>
+                            <li>• Vaccination certificates (Meningitis ACWY, COVID-19)</li>
+                            <li>• Recent passport-sized photographs</li>
+                            <li>• For women: Mahram (male guardian) must accompany or provide authorization</li>
+                            <li>• Travel insurance (recommended)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">How long does the visa process take?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>The Umrah visa processing typically takes 7-14 working days from the date we receive all your complete documents. During peak seasons (Ramadan, school holidays), it may take up to 21 days. We recommend applying at least 30 days before your intended travel date to avoid any delays.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">What is included in the package price?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>Our packages include:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• Round-trip flights from your departure city</li>
+                            <li>• Umrah visa processing</li>
+                            <li>• Hotel accommodation in Makkah and Madinah</li>
+                            <li>• Airport transfers and inter-city transportation</li>
+                            <li>• Meals as specified in the package</li>
+                            <li>• Religious guidance and group leader services</li>
+                            <li>• 24/7 customer support during your trip</li>
+                            <li>• Basic travel insurance</li>
+                        </ul>
+                        <p class="mt-2">Excludes: Personal expenses, extra meals, shopping, tips, and optional tours.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">Can I perform Umrah during any time of the year?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>Yes, Umrah can be performed at any time throughout the year, unlike Hajj which has specific dates. However, certain periods are more popular:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>Ramadan:</strong> Considered the most blessed time with higher spiritual rewards</li>
+                            <li>• <strong>School holidays:</strong> Popular for families (summer, winter breaks)</li>
+                            <li>• <strong>Off-peak periods:</strong> Less crowded, potentially lower prices (January-March, September-November)</li>
+                        </ul>
+                        <p class="mt-2">We recommend booking early, especially for Ramadan and holiday seasons.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">What should I pack for Umrah?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>Essential items to pack:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>Ihram clothing:</strong> White seamless garments for men (2-3 sets)</li>
+                            <li>• <strong>Modest clothing:</strong> Loose-fitting clothes for regular wear</li>
+                            <li>• <strong>Comfortable footwear:</strong> Easy to remove shoes for mosque entry</li>
+                            <li>• <strong>Personal toiletries:</strong> Unscented products (during ihram)</li>
+                            <li>• <strong>Medications:</strong> Prescription drugs and basic first aid</li>
+                            <li>• <strong>Religious items:</strong> Quran, prayer mat, tasbih, dua books</li>
+                            <li>• <strong>Electronics:</strong> Phone charger, universal adapter, power bank</li>
+                            <li>• <strong>Documents:</strong> Passport, visa, travel insurance, emergency contacts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">Is there an age limit for Umrah?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>There is no official age limit for Umrah, but practical considerations include:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>Children:</strong> Can accompany parents but need their own visa and passport</li>
+                            <li>• <strong>Elderly pilgrims:</strong> Should consult their doctor before travel</li>
+                            <li>• <strong>Health requirements:</strong> All pilgrims must be in reasonable health due to physical demands</li>
+                            <li>• <strong>Special assistance:</strong> We provide wheelchair and mobility support when needed</li>
+                            <li>• <strong>Medical support:</strong> Our guides are trained in basic first aid and emergency procedures</li>
+                        </ul>
+                        <p class="mt-2">We recommend discussing any health concerns with our team during booking.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">What happens if I get sick during Umrah?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>We provide comprehensive support for health issues:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>24/7 support:</strong> Our team is available round the clock</li>
+                            <li>• <strong>Medical facilities:</strong> Access to hospitals and clinics in Makkah and Madinah</li>
+                            <li>• <strong>Travel insurance:</strong> Covers medical expenses (terms apply)</li>
+                            <li>• <strong>Local assistance:</strong> Our guides will accompany you to medical facilities</li>
+                            <li>• <strong>Medication:</strong> Help obtaining necessary medicines</li>
+                            <li>• <strong>Emergency evacuation:</strong> Arrangements for serious cases if required</li>
+                        </ul>
+                        <p class="mt-2">Always bring your regular medications and inform us of any pre-existing conditions.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">Can I extend my stay or change my return date?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>Yes, but with certain conditions:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>Advance notice:</strong> Inform us at least 48 hours before scheduled return</li>
+                            <li>• <strong>Visa validity:</strong> Your visa must allow for the extended stay</li>
+                            <li>• <strong>Additional costs:</strong> Extra accommodation, meals, and flight change fees apply</li>
+                            <li>• <strong>Hotel availability:</strong> Subject to room availability during extended period</li>
+                            <li>• <strong>Individual arrangements:</strong> Extended stays are on individual basis, not group rates</li>
+                            <li>• <strong>Support limitations:</strong> Group guide services end with original schedule</li>
+                        </ul>
+                        <p class="mt-2">We recommend planning your desired duration at the time of booking for better rates.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none flex justify-between items-center" style="color: var(--primary-green);">
+                        <span class="text-lg font-semibold">What is your cancellation and refund policy?</span>
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-700">
+                        <p>Our cancellation policy varies by timing:</p>
+                        <ul class="mt-2 space-y-1">
+                            <li>• <strong>90+ days before travel:</strong> 90% refund (admin fees apply)</li>
+                            <li>• <strong>60-89 days:</strong> 75% refund</li>
+                            <li>• <strong>30-59 days:</strong> 50% refund</li>
+                            <li>• <strong>15-29 days:</strong> 25% refund</li>
+                            <li>• <strong>Less than 15 days:</strong> No refund</li>
+                            <li>• <strong>Visa rejection:</strong> Full refund minus processing fees</li>
+                            <li>• <strong>Medical emergencies:</strong> Case-by-case review with documentation</li>
+                        </ul>
+                        <p class="mt-2">Travel insurance is highly recommended to protect against unforeseen circumstances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="py-20 islamic-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 arabic-font" style="color: var(--primary-green);">
+                    <i class="fas fa-phone text-yellow-500 mr-3"></i>
+                    Book Your Sacred Journey
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to embark on your spiritual journey? Contact us today or submit your inquiry form.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold mb-8" style="color: var(--primary-green);">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Head Office</h4>
+                                    <p class="text-gray-600">
+                                        123 Islamic Center Street<br>
+                                        London, UK SW1A 1AA<br>
+                                        United Kingdom
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone" style="color: var(--primary-green);"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone Numbers</h4>
+                                    <p class="text-gray-600">
+                                        UK: +44 20 7946 0958<br>
+                                        USA: +1 (555) 123-4567<br>
+                                        Canada: +1 (416) 555-0123
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope" style="color: var(--primary-green);"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Addresses</h4>
+                                    <p class="text-gray-600">
+                                        info@ayunitravel.com<br>
+                                        bookings@ayunitravel.com<br>
+                                        support@ayunitravel.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock" style="color: var(--primary-green);"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                        Saturday: 10:00 AM - 4:00 PM<br>
+                                        Sunday: Closed<br>
+                                        <strong>24/7 Emergency Support Available</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-share-alt" style="color: var(--primary-green);"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Follow Us</h4>
+                                    <div class="flex space-x-3 mt-2">
+                                        <a href="#" class="text-blue-600 hover:text-blue-800 text-xl">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                        <a href="#" class="text-blue-400 hover:text-blue-600 text-xl">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#" class="text-pink-600 hover:text-pink-800 text-xl">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                        <a href="#" class="text-red-600 hover:text-red-800 text-xl">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                        <a href="#" class="text-green-600 hover:text-green-800 text-xl">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold mb-8" style="color: var(--primary-green);">Book Your Umrah Package</h3>
+                        
+                        <form class="contact-form space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">First Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-lg" placeholder="Enter your first name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Last Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-lg" placeholder="Enter your last name">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Email Address *</label>
+                                    <input type="email" required class="w-full px-4 py-3 rounded-lg" placeholder="your@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Phone Number *</label>
+                                    <input type="tel" required class="w-full px-4 py-3 rounded-lg" placeholder="+44 20 1234 5678">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Country of Residence *</label>
+                                <select required class="w-full px-4 py-3 rounded-lg">
+                                    <option value="">Select your country</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="USA">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Preferred Package *</label>
+                                    <select required class="w-full px-4 py-3 rounded-lg">
+                                        <option value="">Select package</option>
+                                        <option value="Economy">Economy Package - $1,299</option>
+                                        <option value="Standard">Standard Package - $1,899</option>
+                                        <option value="VIP">VIP Package - $3,499</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Number of Travelers</label>
+                                    <select class="w-full px-4 py-3 rounded-lg">
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5+">5+ People</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Preferred Travel Date</label>
+                                    <input type="date" class="w-full px-4 py-3 rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Duration (Days)</label>
+                                    <select class="w-full px-4 py-3 rounded-lg">
+                                        <option value="7">7 Days</option>
+                                        <option value="10">10 Days</option>
+                                        <option value="14">14 Days</option>
+                                        <option value="21">21 Days</option>
+                                        <option value="Custom">Custom Duration</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Special Requirements / Comments</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg" placeholder="Please mention any special requirements, dietary needs, medical conditions, or questions you have..."></textarea>
+                            </div>
+
+                            <div class="space-y-4">
+                                <label class="flex items-start space-x-3">
+                                    <input type="checkbox" required class="mt-1">
+                                    <span class="text-sm text-gray-600">
+                                        I agree to the <a href="#" class="text-green-600 hover:underline">Terms and Conditions</a> and <a href="#" class="text-green-600 hover:underline">Privacy Policy</a> *
+                                    </span>
+                                </label>
+                                
+                                <label class="flex items-start space-x-3">
+                                    <input type="checkbox" class="mt-1">
+                                    <span class="text-sm text-gray-600">
+                                        I would like to receive updates and special offers via email
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="space-y-3">
+                                <button type="submit" class="btn-primary w-full text-white py-4 rounded-lg font-semibold text-lg">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Submit Booking Inquiry
+                                </button>
+                                
+                                <button type="button" class="btn-gold w-full text-white py-3 rounded-lg font-semibold">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    Quick Chat on WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Contact Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16 fade-in">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl" style="color: var(--primary-green);"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Call Us Now</h4>
+                    <p class="text-gray-600 mb-4">Speak directly with our Umrah specialists</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-full">
+                        +44 20 7946 0958
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-2xl" style="color: var(--primary-green);"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">WhatsApp</h4>
+                    <p class="text-gray-600 mb-4">Get instant support and quotes</p>
+                    <button class="btn-gold text-white px-6 py-2 rounded-full">
+                        Chat Now
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-check text-2xl" style="color: var(--primary-green);"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2" style="color: var(--primary-green);">Free Consultation</h4>
+                    <p class="text-gray-600 mb-4">Book a free consultation call</p>
+                    <button class="btn-primary text-white px-6 py-2 rounded-full">
+                        Schedule Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4 arabic-font">
+                        <i class="fas fa-mosque text-yellow-400 mr-2"></i>
+                        Ayuni Travel & Tour
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Your trusted partner for the sacred journey of Umrah. We provide exceptional service and spiritual guidance to make your pilgrimage meaningful and comfortable.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-yellow-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-yellow-400 transition-colors">About Us</a></li>
+                        <li><a href="#guide" class="hover:text-yellow-400 transition-colors">Umrah Guide</a></li>
+                        <li><a href="#packages" class="hover:text-yellow-400 transition-colors">Packages</a></li>
+                        <li><a href="#testimonials" class="hover:text-yellow-400 transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Umrah Packages</li>
+                        <li>Visa Processing</li>
+                        <li>Flight Bookings</li>
+                        <li>Hotel Reservations</li>
+                        <li>Group Tours</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Islamic Center Street, London, UK
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            +44 20 7946 0958
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@ayunitravel.com
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            +44 20 7946 0958
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Ayuni Travel & Tour. All rights reserved. | Licensed Travel Agency | ATOL Protected</p>
+                <p class="mt-2 arabic-font text-yellow-400">
+                    بارك الله فيكم - May Allah bless your journey
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sticky navbar
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('sticky-nav');
+            } else {
+                navbar.classList.remove('sticky-nav');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Fade in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && !otherAnswer.classList.contains('hidden')) {
+                        otherAnswer.classList.add('hidden');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current FAQ
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message (in real implementation, this would send data to server)
+            alert('Thank you for your inquiry! We will contact you within 24 hours to discuss your Umrah journey. Barakallahu feeki!');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Package selection buttons
+        document.querySelectorAll('.package-card button').forEach(button => {
+            button.addEventListener('click', function() {
+                const packageName = this.textContent.includes('Economy') ? 'Economy' : 
+                                  this.textContent.includes('Standard') ? 'Standard' : 'VIP';
+                
+                // Scroll to contact form
+                document.getElementById('contact').scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Pre-select package in form
+                setTimeout(() => {
+                    const packageSelect = document.querySelector('select[required]');
+                    if (packageSelect) {
+                        packageSelect.value = packageName;
+                    }
+                }, 1000);
+            });
+        });
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            // Add initial animation to hero content
+            const heroContent = document.querySelector('.fade-in');
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.add('visible');
+                }, 500);
+            }
+        });
+
+        // WhatsApp and Call buttons functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.innerHTML.includes('WhatsApp') || button.innerHTML.includes('Chat')) {
+                button.addEventListener('click', () => {
+                    window.open('https://wa.me/442079460958?text=Assalamu%20Alaikum,%20I%20am%20interested%20in%20your%20Umrah%20packages.%20Please%20provide%20more%20information.', '_blank');
+                });
+            }
+            
+            if (button.innerHTML.includes('Call Now') || button.innerHTML.includes('+44')) {
+                button.addEventListener('click', () => {
+                    window.location.href = 'tel:+442079460958';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
