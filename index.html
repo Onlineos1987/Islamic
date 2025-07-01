@@ -4,131 +4,266 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Umrah Travel & Tour</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+    header {
+      background: #045d4b;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    nav h1 { font-size: 1.8rem; }
+    nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1579519313420-e1296c06b055?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .hero .btn {
+      background: #ffd700;
+      color: #000;
+      padding: 12px 25px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    section { padding: 60px 20px; }
+    h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #045d4b; }
+
+    .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .package {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .package img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .package h3 { margin: 15px 0 10px; color: #045d4b; }
+    .package ul { list-style: none; padding: 0; margin: 15px 0; }
+    .package ul li { margin: 5px 0; }
+    .package .price { font-weight: bold; font-size: 1.2rem; color: #067e62; }
+
+    .guide ol { max-width: 800px; margin: auto; }
+    .guide li { margin: 15px 0; }
+
+    .faq .faq-item { margin-bottom: 20px; }
+    .faq h4 { color: #045d4b; }
+    
+    .video-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: #eef6f4;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 20px;
+      border-left: 5px solid #045d4b;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 15px;
+    }
+    form input, form select, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #045d4b;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    footer {
+      background: #045d4b;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.8rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="container header-container">
-      <h1>My Umrah Travel & Tour</h1>
+    <div class="container">
       <nav>
-        <ul class="nav-links">
+        <h1>Umrah Travel & Tour</h1>
+        <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#packages">Packages</a></li>
-          <li><a href="#guide">Umrah Guide</a></li>
-          <li><a href="#faq">FAQs</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#guide">Guide</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="container">
-      <h2>Begin Your Sacred Journey with Peace & Preparation</h2>
-      <p>Complete Umrah travel planning and services in one place.</p>
-      <a href="#packages" class="btn">View Packages</a>
+    <div class="content">
+      <h2>Begin Your Sacred Journey to Makkah & Madinah</h2>
+      <a href="#packages" class="btn">Explore Packages</a>
     </div>
   </section>
 
-  <!-- Packages -->
-  <section id="packages" class="section">
+  <section id="packages">
     <div class="container">
-      <h2>Umrah Packages</h2>
+      <h2 class="section-title">Our Umrah Packages</h2>
       <div class="packages">
         <div class="package">
-          <h3>Economy</h3>
-          <p>Affordable travel, shared rooms, group transport.</p>
-          <ul>
-            <li>7 Days Stay</li>
-            <li>Visa Included</li>
-            <li>Shared Room</li>
-          </ul>
-          <span>$799</span>
+          <img src="https://images.unsplash.com/photo-1618397742737-7c81e7dd3b45?auto=format&fit=crop&w=800&q=80" alt="Economy">
+          <h3>Economy Package</h3>
+          <ul><li>7 Days</li><li>Visa + Hotel</li><li>Group Transport</li></ul>
+          <div class="price">$799</div>
         </div>
         <div class="package">
-          <h3>Standard</h3>
-          <p>Comfortable travel with 3-star hotels and local guide.</p>
-          <ul>
-            <li>10 Days Stay</li>
-            <li>Visa + Transport</li>
-            <li>3-Star Hotel</li>
-          </ul>
-          <span>$1299</span>
+          <img src="https://images.unsplash.com/photo-1600241110793-8fd19d8978bc?auto=format&fit=crop&w=800&q=80" alt="Standard">
+          <h3>Standard Package</h3>
+          <ul><li>10 Days</li><li>3-Star Hotel</li><li>Local Guide</li></ul>
+          <div class="price">$1299</div>
         </div>
         <div class="package">
-          <h3>VIP</h3>
-          <p>Luxury Umrah experience, 5-star hotel, private car.</p>
-          <ul>
-            <li>14 Days Stay</li>
-            <li>Private Transport</li>
-            <li>5-Star Hotel</li>
-          </ul>
-          <span>$2299</span>
+          <img src="https://images.unsplash.com/photo-1606206522323-e8b9c48fa0b1?auto=format&fit=crop&w=800&q=80" alt="VIP">
+          <h3>VIP Package</h3>
+          <ul><li>14 Days</li><li>5-Star Hotel</li><li>Private Car</li></ul>
+          <div class="price">$2299</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Umrah Guide -->
-  <section id="guide" class="section alt-section">
+  <section id="guide" class="guide">
     <div class="container">
-      <h2>Step-by-Step Umrah Guide</h2>
+      <h2 class="section-title">Step-by-Step Umrah Guide</h2>
       <ol>
-        <li><strong>Before Departure:</strong> Apply for visa, take vaccinations, prepare Ihram.</li>
-        <li><strong>Arrival in Makkah:</strong> Perform Tawaf, Sa'i between Safa and Marwa, Tahallul.</li>
-        <li><strong>Madinah Visit:</strong> Optional but highly recommended for Ziyarat.</li>
-        <li><strong>Important Tips:</strong> Keep documents safe, follow Islamic dress code, avoid rush.</li>
+        <li>Get your documents ready: Passport, photos, vaccine certificate.</li>
+        <li>Departure & Ihram: Enter state of Ihram from Miqat.</li>
+        <li>Upon arrival: Perform Tawaf and Sa’i in Masjid al-Haram.</li>
+        <li>Shaving/trimming hair to exit Ihram.</li>
+        <li>Ziyarat of Madinah and Prophet’s Mosque (optional).</li>
       </ol>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
+  <section id="faq" class="faq">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq">
-        <div class="faq-item">
-          <h4>What documents are required for Umrah?</h4>
-          <p>Passport, 2 photos, COVID certificate, vaccination card.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Is hotel included in all packages?</h4>
-          <p>Yes, hotel and transport are included in all packages.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Do you provide group or private tours?</h4>
-          <p>We provide both group and private customized packages.</p>
-        </div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h4>What is included in the Umrah package?</h4>
+        <p>Visa, accommodation, transport, and guidance.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are meals included?</h4>
+        <p>Meals are optional and can be included on request.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can we customize the date?</h4>
+        <p>Yes, private and family packages are flexible.</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="section alt-section">
+  <section id="video" class="video-section">
+    <h2 class="section-title">Watch Our Umrah Introduction</h2>
+    <iframe src="https://www.youtube.com/embed/7kRCL8dDA28" allowfullscreen></iframe>
+  </section>
+
+  <section id="gallery">
     <div class="container">
-      <h2>What Our Pilgrims Say</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>"Very professional and helpful! Everything was arranged perfectly."</p>
-          <h5>- Ahmad R.</h5>
-        </div>
-        <div class="testimonial">
-          <p>"We went on VIP package and it was a dream come true, Alhamdulillah."</p>
-          <h5>- Fatima S.</h5>
-        </div>
+      <h2 class="section-title">Gallery of Holy Places</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1612209372651-105ff2b6efba?auto=format&fit=crop&w=500&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1583580932477-1d6e006c1ce7?auto=format&fit=crop&w=500&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1562675290-6d7f465afaa2?auto=format&fit=crop&w=500&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1590490360189-39e33055d948?auto=format&fit=crop&w=500&q=80" alt="">
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact">
     <div class="container">
-      <h2>Contact & Booking</h2>
+      <h2 class="section-title">Contact & Booking</h2>
       <form id="contactForm">
         <input type="text" placeholder="Full Name" required />
         <input type="email" placeholder="Email Address" required />
@@ -145,13 +280,18 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 My Umrah Travel & Tour. All Rights Reserved.</p>
+      <p>&copy; 2025 My Umrah Travel & Tour. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Our team will contact you shortly.");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
