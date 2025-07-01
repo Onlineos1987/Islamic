@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background: #045d4b;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('assets/kaaba.jpg') center center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.btn {
+  background: #067e62;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.alt-section {
+  background: #eef6f4;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.packages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.package {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  flex: 1;
+  border-radius: 8px;
+}
+
+.package h3 {
+  color: #045d4b;
+}
+
+.package span {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #067e62;
+}
+
+.faq-item h4 {
+  margin-bottom: 5px;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #045d4b;
+  flex: 1;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+  max-width: 500px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #045d4b;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background: #045d4b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
