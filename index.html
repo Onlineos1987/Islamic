@@ -3,228 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayuni Travel & Tour – Divine Umrah Experience</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <title>Ayuni Travel & Tour - Umrah Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Noto Sans', sans-serif;
-    }
-    body {
-      background: #f8f9fa;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-     background: url('https://en.islamonweb.net/uploads/images/2024/06/image_750x500_66723794793eb.jpg') no-repeat center center/cover;
-      height: 100vh;
-      color: gray;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #fff;
-      text-shadow: 1px 1px 10px black;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-    .arabic {
-      font-size: 2rem;
-      font-weight: bold;
-      color: gold;
-    }
-    nav {
-      background: #222;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      color: #3c3c3c;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid gold;
-      display: inline-block;
-    }
-    .package {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin: 1rem 0;
-    }
-    .package img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-    .testimonial {
-      background: #fff9e6;
-      border-left: 5px solid gold;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-style: italic;
-    }
-    form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 2rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
-    button {
-      background: gold;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    audio {
-      display: none;
-    }
-    #whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif;}
+    body {line-height: 1.6; background-color: #f6f8fa; color: #222;}
+    header {background: url('https://images.unsplash.com/photo-1508697014387-1d5f1f9fbe5d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;}
+    header h1 {font-size: 3rem; text-shadow: 2px 2px 4px #000;}
+    header p {font-size: 1.3rem; text-shadow: 1px 1px 2px #000;}
+    nav {position: sticky; top: 0; background: #1c1c2e; padding: 10px; display: flex; justify-content: center; gap: 20px; z-index: 1000;}
+    nav a {color: white; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 4px; transition: background 0.3s;}
+    nav a:hover {background: #33334d;}
+    section {padding: 40px 20px; max-width: 1000px; margin: auto;}
+    .package, .policy, .about, .contact {margin-bottom: 40px;}
+    h2 {color: #1c1c2e; margin-bottom: 20px; font-size: 2rem;}
+    .packages img {width: 100%; border-radius: 10px; margin-bottom: 10px;}
+    .grid {display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));}
+    footer {background: #1c1c2e; color: white; text-align: center; padding: 20px;}
+    video {width: 100%; max-width: 1000px; border-radius: 12px; margin: 20px auto; display: block;}
   </style>
 </head>
 <body>
-  <!--<audio id="naat" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>-->
-  <audio id="naat" src="https://www.thesufi.com/Islamic-Collection/Islamic_Audio_Section/67-Islamic-Masnoon-Dua-Arabic-with-Urdu-Translation-MP3/Hajj-and-Umrah-Dua-in-MP3.mp3"></audio>
-  
- 
+  <header>
+    <h1>Ayuni Travel & Tour</h1>
+    <p>Complete Umrah & Hajj Guidance With Comfort & Spirituality</p>
+  </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#packages">Packages</a>
-    <a href="#policy">Policy</a>
+    <a href="#policy">Policies</a>
     <a href="#contact">Contact</a>
-    <a href="ayuni-guide.pdf" download>Download Guide</a>
   </nav>
-  <header>
-    <div class="arabic">وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ</div>
-    <p>“Aur Hajj aur Umrah Allah ke liye mukammal karo” (Al-Baqarah 2:196)</p>
-    <h1>Har Qadam Par Barkat – Ayuni Travel ke Saath</h1>
-    <p>Apka roohani safar ek asaan aur yaadgar ibadat mein tabdeel karein</p>
-    <button onclick="document.getElementById('naat').play()">🔊 Sunein: Labbaik Allahumma Labbaik</button>
-  </header>
 
-  <section id="about">
-    <h2>About Ayuni Travel & Tour</h2>
-    <p>Humara mission hai har musalman bhai behan ke liye Umrah ka safar aasan banana — roohaniyat, sukoon aur sharai rehnumaai ke saath. Har safar mein guidance, transport, accommodation aur ziyarat packages shamil hain.</p>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Ayuni Travel & Tour is your trusted partner for a spiritual and hassle-free Umrah journey. We provide fully guided tours, luxurious accommodations, transport, visa processing, and complete support — so you can focus on your Ibadah without stress.</p>
+    <video controls>
+      <source src="https://cdn.pixabay.com/video/2023/01/20/147943-794363644_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="packages" class="packages">
+    <h2>Our Umrah Packages</h2>
+    <div class="grid">
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1584916200293-64dd7d7b4e6e?auto=format&fit=crop&w=800&q=80" alt="Basic Umrah Package">
+        <h3>Basic Package</h3>
+        <p>Economical and complete Umrah package with group guidance, shared accommodation, and transport.</p>
+      </div>
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" alt="Premium Umrah Package">
+        <h3>Premium Package</h3>
+        <p>Stay in 4-star hotels, personal transport, dedicated guide, and fast visa processing included.</p>
+      </div>
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=800&q=80" alt="VIP Umrah Package">
+        <h3>VIP Package</h3>
+        <p>5-star hotels near Haram, VIP lounge service, full-time guide, and exclusive amenities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="policy" class="policy">
+    <h2>Umrah Policies (Post Hajj 2025)</h2>
     <ul>
-      <li>✔️ 100% Shariah Compliant Services</li>
-      <li>✔️ Har group mein religious scholar rehnuma</li>
-      <li>✔️ Visa, Flight, Hotel, Transport sab kuch ek jagah</li>
+      <li>Only pilgrims with updated biometric records are eligible.</li>
+      <li>Women can travel without a Mehram under approved group arrangements.</li>
+      <li>Health certificate & vaccination proof required (COVID-19, meningitis).</li>
+      <li>Visa processing time: 5-7 working days. All packages are refundable upon embassy rejection.</li>
+      <li>Children above 2 years require full package purchase.</li>
+      <li>Final travel and accommodation confirmation subject to Saudi Hajj Ministry updates.</li>
     </ul>
   </section>
 
-  <section id="packages">
-    <h2>Umrah Packages</h2>
-    <div class="package">
-      <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVjY2ElMjBrYWFiYXxlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Package">
-      <h3>Standard Umrah Package</h3>
-      <p>15 din ka safar, 3-star hotel, local ziyarat, transport aur visa.</p>
-    </div>
-    <div class="package">
-     <img src="https://images.unsplash.com/photo-1627728734379-a5f8c099763e?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVjY2ElMjBrYWFiYXxlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Package">
-      <h3>VIP Umrah Package</h3>
-      <p>5-star hotel, luxury transport, direct flights, 24/7 assistance, aur private ziyarat tours.</p>
-    </div>
-  </section>
-
-  <section id="policy">
-    <h2>Umrah Policy after Hajj 2025</h2>
-    <ul>
-      <li>🗓 Umrah flights resume 15th Muharram 1447H</li>
-      <li>🧾 Valid passport and biometric verification required</li>
-      <li>📄 Women under 45 must travel with a Mahram</li>
-      <li>🏥 Health insurance and COVID clearance mandatory (if required by KSA)</li>
-      <li>📍 Age 12+ only allowed with valid CNIC/Form-B</li>
-      <li>🕌 Booking at least 4 weeks in advance is recommended</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Testimonials – Logon Ka Bharosa, Allah ka Fazl</h2>
-    <div class="testimonial">
-      “Jab mein pehli dafa Kaaba dekha, meri aankhon se aansu rukay nahi. Ayuni Travel ne har lamha asaan banaya. Yeh sirf trip nahi thi — yeh meri rooh ka safar tha.”<br>— Amina Bibi, Karachi
-    </div>
-    <div class="testimonial">
-      “Har qadam par rehnuma, aur duaon se bhara safar. Allah Ayuni Travel ko barkat de.”<br>— Umar Farooq, Lahore
-    </div>
-  </section>
-
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact & Booking</h2>
-    <form>
-      <input type="text" placeholder="Your Full Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="tel" placeholder="Your Phone Number" required>
-      <textarea placeholder="Message or Special Request" rows="4"></textarea>
-      <button type="submit">Submit Booking Request</button>
-    </form>
-    <p style="margin-top: 1rem;">📍 Ayuni Travel, Saddar, Rawalpindi | 📞 +92 300 1234567 | 📧 info@ayunitravel.com</p>
+    <p>📞 Call us: <strong>+92 300 1234567</strong><br>
+    📍 Visit: Ayuni Office, Gulberg, Lahore, Pakistan<br>
+    📧 Email: support@ayunitravel.com</p>
+    <p>Fill our online booking form to start your journey with us.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Ayuni Travel & Tour. All Rights Reserved.</p>
+    <p>&copy; 2025 Ayuni Travel & Tour. All rights reserved.</p>
   </footer>
-
-  <a href="https://wa.me/923001234567" id="whatsapp" target="_blank">💬</a>
 </body>
 </html>
